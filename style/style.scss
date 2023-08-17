@@ -1,4 +1,4 @@
-/*Variables*/
+    /*Variables*/
 $Strong-Cyan :hsl(171, 66%, 44%);
 $Light-Blue:hsl(233, 100%, 69%);
 $Dark-Grayish-Blue :hsl(210, 10%, 33%);
@@ -6,6 +6,7 @@ $Grayish-Blue :hsl(201, 11%, 66%);
 $title-font-size:20px;
 $width-button-mobile:312px;
 $margin-bottom-text-figure:60px;
+
 
 @mixin button-value {
     font-family: 'Bai Jamjuree', sans-serif;
@@ -59,6 +60,11 @@ main {
         height: 3381px;
     }
 }
+a {
+    text-decoration: none;
+    color: $Dark-Grayish-Blue;
+}
+
 //section de l'en-tête
 .section-top {
     width: 313px;
@@ -74,7 +80,7 @@ main {
             margin-right: 25px;
         }         
     }
-    &__title--first {
+    &__title-first {
         @include title-value;
         @media screen and (min-width:687px) {
             width: 100%;
@@ -82,7 +88,7 @@ main {
             margin-bottom: 0;   
         }
     }
-    &__title--second {
+    &__title-second {
         @media screen and (min-width:687px) {
             width: 100%;
             font-size: 30px;            
@@ -191,17 +197,38 @@ p.section-top__text {
 }
 
 .footer-content {
+    @include display-grid;
     background-color: rgba(170, 170, 170, 0.253);
     width: 313px;
     height: 502px;
     text-decoration: none;
     font-family: 'Bai Jamjuree', sans-serif;
-    font-size: 18px;
+    font-size: 18px;        
 
-    &__image {
-        width: 55px;
-        height: 55px;
+    @media screen and (min-width:687px) {
+    justify-content:space-between;    
+    display: flex;
+    height:151px;
+    width: 100%;    
+ }    
+    &>ul {
+        height: 219px;
+        list-style: none;
+        padding: 0;
+        margin-bottom: 70px;        
+        text-decoration: none;
+        
+        li {
+            margin-bottom: 36px;
+        }
+    }    
+
+    &__logo {
+        width: 56px;
+        margin-top: 30px;
+        height: 56px;
     }
+    /*
     &__social__icons {
         background-color: rgba(102, 51, 153, 0.438);
         width: 123px;
@@ -232,5 +259,12 @@ p.section-top__text {
             }
 
         }
-    }
+    }*/
+}
+.footer-content__social-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 150px;
+    height: 24px;
+    margin-bottom: 40px;
 }
