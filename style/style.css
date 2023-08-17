@@ -1,4 +1,5 @@
 /*Variables*/
+/*mixins*/
 @import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap");
 body {
   box-sizing: border-box;
@@ -148,6 +149,11 @@ a {
   }
 }
 
+.section-top__flex-title--Fourth, .section-top__flex-title--third, .section-top__flex-title--Fifth {
+  font-family: "Bai Jamjuree", sans-serif;
+  color: hsl(210, 10%, 33%);
+  font-size: 23px;
+}
 @media screen and (min-width: 1046px) {
   .section-top__flex {
     display: flex;
@@ -168,20 +174,20 @@ a {
   }
 }
 
-.section-top__figure {
+.section-top__flex__figure {
   width: 312px;
   height: 238px;
   margin-bottom: 60px;
 }
 @media screen and (min-width: 687px) {
-  .section-top__figure {
+  .section-top__flex__figure {
     width: 719px;
     height: 400px;
     margin-bottom: 15px;
   }
 }
 @media screen and (min-width: 1047px) {
-  .section-top__figure {
+  .section-top__flex__figure {
     width: 723px;
     height: 573px;
   }
@@ -190,7 +196,7 @@ a {
 .section__top__title {
   font-family: "Bai Jamjuree", sans-serif;
   color: hsl(210, 10%, 33%);
-  font-size: 25px;
+  font-size: 27px;
   margin: 0;
 }
 
@@ -206,7 +212,6 @@ p.section-top__text {
 }
 
 .section-bottom {
-  background-color: rgba(102, 51, 153, 0.37);
   width: 313px;
   height: 2546px;
 }
@@ -215,6 +220,57 @@ p.section-top__text {
     width: 100%;
     height: 1619px;
   }
+}
+.section-bottom__figure {
+  width: 100%;
+  height: 181px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: center;
+}
+.section-bottom__figure img {
+  width: 313px;
+}
+.section-bottom__title-first {
+  font-family: "Bai Jamjuree", sans-serif;
+  color: hsl(210, 10%, 33%);
+  font-size: 27px;
+}
+.section-bottom__text {
+  font-size: 16px;
+  color: hsl(201, 11%, 66%);
+  font-family: "Bai Jamjuree", sans-serif;
+  line-height: 25px;
+  margin-bottom: 60px;
+}
+
+.section-bottom__icons-texts {
+  width: 310px;
+  height: 669px;
+  margin-bottom: 150px;
+}
+.section-bottom__icons-texts img {
+  margin-bottom: 30px;
+}
+.section-bottom__icons-texts p {
+  margin-bottom: 60px;
+  font-size: 16.3px;
+  line-height: 25px;
+  font-family: "Bai Jamjuree", sans-serif;
+  color: hsl(210, 10%, 33%);
+}
+
+.section-bottom__web-icons {
+  display: grid;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 444px;
+}
+.section-bottom__web-icons img {
+  width: 150px;
+  height: 35px;
+  margin-bottom: 60px;
 }
 
 .footer-content {
@@ -226,43 +282,12 @@ p.section-top__text {
   text-decoration: none;
   font-family: "Bai Jamjuree", sans-serif;
   font-size: 18px;
-  /*
-  &__social__icons {
-      background-color: rgba(102, 51, 153, 0.438);
-      width: 123px;
-      height: 25px;
-  }
-  &__links {
-      width: 484px;
-      height: 59px;
-  }
-
-  @media screen and (min-width:687px){
-      width: 100%;
-      height: 151px;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-
-      .footer__content__links {
-          width: 490px;
-          height: 57px;
-          text-align: initial;
-
-          &>a {
-              width: 117px;
-              height: 20px;
-              margin-right: 73px;
-              text-decoration:none;
-          }
-
-      }
-  }*/
 }
 @media screen and (min-width: 687px) {
   .footer-content {
-    justify-content: space-between;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     height: 151px;
     width: 100%;
   }
@@ -274,18 +299,40 @@ p.section-top__text {
   margin-bottom: 70px;
   text-decoration: none;
 }
+@media screen and (min-width: 687px) {
+  .footer-content > ul {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 484px;
+    height: 58px;
+  }
+}
 .footer-content > ul li {
   margin-bottom: 36px;
+}
+@media screen and (min-width: 687px) {
+  .footer-content > ul li {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+  .footer-content > ul li a {
+    width: 118px;
+    height: 59px;
+    margin-right: 20px;
+  }
 }
 .footer-content__logo {
   width: 56px;
   margin-top: 30px;
   height: 56px;
+  margin: 0;
 }
 
 .footer-content__social-icons {
   display: flex;
   justify-content: space-between;
+  margin: 0;
   width: 150px;
   height: 24px;
   margin-bottom: 40px;
