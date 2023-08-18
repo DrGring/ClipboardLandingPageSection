@@ -48,18 +48,34 @@ $margin-bottom-text-figure:60px;
     display: flex;
     justify-content: space-around;
 }
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+}
 @mixin width-image{
     width: 312px;
     height: 238px;
     margin-bottom: $margin-bottom-text-figure;
     @media screen and (min-width:687px) {
         width: 719px;
-        height: 400px;
+        height: 450px;
         margin-bottom: 15px;
     }
 }
 @mixin media-margin-null {
     margin:0;
+}
+@mixin button-ios-shadow {
+    -webkit-box-shadow: 14px 12px 7px -10px rgba(63, 242, 217, 0.4); 
+    box-shadow: 1px 20px 7px -10px rgba(63, 242, 217, 0.4);
+    border-bottom: 3px outset rgba(43, 161, 146, 0.4);
+    border-radius: 40px;
+}
+@mixin button-mac-shadow {
+    -webkit-box-shadow: 14px 12px 7px -10px rgba(143, 140, 230, 0.63); 
+    box-shadow: 1px 20px 7px -10px rgba(143, 140, 230, 0.63);
+    border-bottom: 3px outset rgba(90, 87, 187, 0.438);
+    border-radius: 40px;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&display=swap');
@@ -70,12 +86,19 @@ body {
     background-repeat: no-repeat;
     background-position-x: center;
     margin: 0;
-    height: 5205px;
+    height: 5033px;
     display: flex;
     justify-content: center;
 
     @media screen and (min-width:377px) { 
         background-image: url(/images/bg-header-desktop.png);
+        height: 3250px;
+    }
+    @media screen and (min-width:687px) {
+        height: 4250px;
+        @media screen and (min-width:1014px) {
+            height: 3470px;
+        }
     }
 }
 main {
@@ -83,8 +106,8 @@ main {
     width: 311px;
     height: 5033px;
     @media screen and  (min-width:687px) {
-        width: 100%;        
-        height: 3381px;
+        width: 100%;
+        height: 100%;
     }
 }
 a {
@@ -154,15 +177,21 @@ a {
     .button-mac {
         margin-right: 20px;
     }
+
     .button-ios {
         background-color: $Strong-Cyan;
         @include button-value;
+        @include button-ios-shadow;
     }
     .button-mac {
         background-color: $Light-Blue;
         @include button-value;
+        @include button-mac-shadow;
     }  
 }
+/*Hover*/
+//hover des buttons 
+
 .section-top__flex {
     &-title--Fourth, 
     &-title--third,
@@ -214,6 +243,7 @@ p.section-top__text {
    // background-color: rgba(102, 51, 153, 0.37);
     width: 313px;
     height: 2546px;
+    @include display-grid;
     @media screen and (min-width:687px) {
         width: 100%;
         height: 1619px;        
@@ -237,12 +267,39 @@ p.section-top__text {
         line-height: 25px;
         margin-bottom:$margin-bottom-text-figure;
     }
+    &__title-second,
+    &__title-end {
+        @include title-value;
+        font-size: 28px;
+        margin-bottom: 0;
+    }
+    &__text-end {
+        @include title-value;
+        font-size: 16.3px;
+        color: $Grayish-Blue;
+        margin-bottom: 45px;
+        @media screen and (min-width:687px) {
+            width: 620px;
+            height: 55px;            
+        }
+    }
+    &__blacklist h2 {
+        margin-top: 10px;
+    }
+}
+.text_title-second {
+    margin-top: 0;
 }
 .section-bottom__icons-texts {
     width: 310px;
-    height: 669px;
+    height: 769px;
     margin-bottom: 150px;
-    //background-color: rgb(32, 129, 97);
+    @media screen and (min-width:1014px) {
+        @include flex-center;
+        gap: 50px;
+        width: 100%;
+        height: 220px;
+    }
     img {
         margin-bottom: 30px;
     }
@@ -251,18 +308,63 @@ p.section-top__text {
         font-size: 16.3px;
         line-height: 25px;
         @include title-value;
+        color: $Grayish-Blue;
+        @media screen and (min-width:687px) {
+            width: 100%;
+            height: 76px;            
+        }
+    }
+}
+.icon-bottom {
+    width: 310px;
+    &__title {
+        font-size: 23px;
+        @include title-value;
+    }
+}
+.section-bottom__title-end__button {
+    @include display-grid;
+    font-size: 30px;
+    width: 312px;
+    height: 137px;
+    margin-bottom: 100px;
+    @media screen and (min-width:1046px) {
+        display: initial;
+        width: 100%;
+        height: 55px;
+        margin-bottom: 140px;
+        &-ios {
+            margin-right: 20px;
+        }
+    }
+    &-ios {
+        background-color: $Strong-Cyan;
+        @include button-value;
+        @include button-ios-shadow;
+    }
+    &-mac {
+        background-color: $Light-Blue;
+        @include button-value;
+        @include button-mac-shadow;
     }
 }
 .section-bottom__web-icons {
     display: grid;
     justify-content: center;
-    flex-direction: column;
     width: 100%;
     height: 444px;
+    margin-bottom: 50px;
+     @media screen and (min-width:1014px) {
+        @include flex-center;
+        flex-direction: initial;
+        gap: 65px;
+        width: 100%;
+        height: 55px;        
+     }
 
     img {
-        width: 150px;
-        height: 35px;
+        width: 145px;
+        height: 40px;
         margin-bottom:60px;
     }
 }
@@ -275,13 +377,19 @@ p.section-top__text {
     height: 502px;
     text-decoration: none;
     font-family: 'Bai Jamjuree', sans-serif;
+    margin-top: 100px;
     font-size: 18px;        
 
     @media screen and (min-width:687px) {
-    @include flex-space-around;
+    @include flex-center();
     align-items: center;
+    gap: 135px;
+    margin-top: 800px;
     height:151px;
     width: 100%;    
+    @media screen and (min-width:1014px) {
+        margin-top: 0;
+    }
  }    
     &>ul {
         height: 219px;
@@ -311,15 +419,17 @@ p.section-top__text {
 
     &__logo {
         width: 56px;
-        margin-top: 30px;
+        margin-top: 45px;
         height: 56px;
         @include media-margin-null;
     }
 }
 .footer-content__social-icons {
     @include flex-space-between;
-    @include media-margin-null;
     width: 150px;
     height: 24px;
     margin-bottom: 40px;
+    @media screen and (min-width:687px) {
+        margin-bottom: 0;        
+    }
 }
