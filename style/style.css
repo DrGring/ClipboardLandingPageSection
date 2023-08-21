@@ -251,6 +251,12 @@ p.section-top__text {
 .section-bottom__figure img {
   width: 313px;
 }
+@media screen and (min-width: 687px) {
+  .section-bottom__figure img {
+    width: 805px;
+    height: 471px;
+  }
+}
 .section-bottom__title-first {
   font-family: "Bai Jamjuree", sans-serif;
   color: hsl(210, 10%, 33%);
@@ -458,10 +464,10 @@ p.section-top__text {
 }
 @media screen and (min-width: 687px) {
   .footer-content > ul {
-    margin: 0;
     display: flex;
     justify-content: space-between;
-    width: 484px;
+    margin: 0;
+    width: 500px;
     height: 58px;
   }
 }
@@ -497,4 +503,7 @@ p.section-top__text {
   .footer-content__social-icons {
     margin-bottom: 0;
   }
+}
+.footer-content__social-icons img:hover {
+  filter: sepia(100%) saturate(711%) hue-rotate(495deg) brightness(100%) contrast(100%);
 }/*# sourceMappingURL=style.css.map */
