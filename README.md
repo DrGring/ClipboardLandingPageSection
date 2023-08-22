@@ -16,8 +16,8 @@ Users should be able to:
 ![Desktop](<Screenshot 2023-08-21 at 12-14-46 Clipboard landing page.png>) ![Mobile](<Screenshot 2023-08-21 at 12-15-28 Clipboard landing page.png>)
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Frontendmentor.io](https://www.frontendmentor.io/solutions/clipboard-landing-page-by-html-and-sass-l7Bxi8bvcf)
+- Live Site URL: [Vercel.app](https://landing-page-section.vercel.app/#)
 
 ## My process
 
